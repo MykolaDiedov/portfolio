@@ -9,18 +9,60 @@ body {
 	padding: $gap;
 	min-height: 100vh;
 }
+h1 {
+	font-size: 18px;
+	line-height: 21px;
+	color: #fff;
+	font-family: raleway;
+}
 header {
 	height: $gap;
 	position: fixed;
 	background: $bg-color;
 	top: 0;
 	left: 0;
+	padding: 16px 80px;
+	display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 .menu {
 	position: fixed;
-	left: 0;
+	left: 54px;
 	top: 50%;
-	transition: translateY(50%);
+	transform: translateY(50%);
+	z-index: 20;
+}
+.btn-burger {
+	width: 56px;
+	height: 31px;
+	position: relative;
+	background: none;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	outline: none;
+	&-line {
+		width: 56px;
+		height: 5px;
+		background: $brand-color;
+		display: block;
+	}
+	&-line:before, 
+	&-line:after  {
+		content: "";
+		width: 56px;
+		height: 5px;
+		background: $brand-color;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	&-line:after {
+		top: 26px;
+	}
 }
 .hero {
 	background: $primary-color;
@@ -49,14 +91,27 @@ header {
 		display: none;
 		opacity: 0;
 	}
+	.welcome {
+		font-size: 80px;
+		line-height: 96px;
+		font-family: Barlow Condensed;
+	}
 }
 .links {
 	width: $gap;
 	position: fixed;
-	right: 0;
+	right: -28px;
 	top: 0;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+.nav {
+	display: none;
+}
+
+
+.menu-open .nav {
+	display: block;
 }
