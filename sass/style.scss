@@ -15,6 +15,14 @@ h1 {
 	color: #fff;
 	font-family: raleway;
 }
+h2 {
+	font-family: Barlow Condensed;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 80px;
+	line-height: 96px;
+	color: $h2-text-color;
+}
 header {
 	height: $gap;
 	position: fixed;
@@ -25,7 +33,8 @@ header {
 	display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: flex-end;
+	align-items: flex-end;
+	z-index: 30;
 }
 .menu {
 	position: fixed;
@@ -111,7 +120,54 @@ header {
 	display: none;
 }
 
+/* parallax  */
+.parallax {
+	background-image: url(https://techrocks.ru/wp-content/uploads/2020/08/joshua-aragon-BMnhuwFYr7w-unsplash-1280x1000-1.jpg);
+	width: 100%;
+	height: 820px;
+	position: relative;
+  	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 0 $gap;
+}
+/* skills */
+.skills {
+	width: 100%;
+	min-height: 740px;
+	background: $box-color;
+	padding: $gap;
+	display: flex;
+	flex-direction: column;
+	&-level {
+		width: 20px;
+		height: 20px;
+		border-radius: 10px;
+		background: $primary-color;
+		transition: width 3s 0.5s;
+	}
+	&-level:hover {
+		width: 50%;
+	}
+	&-text {
+		font-family: Raleway;
+		line-height: 38px;
+		color: $main-text-color;
+		margin: 32px 0 0;
+	}
+	&-box {
+		width: 100%;
+		height: 20px;
+		border-radius: 10px;
+		background: rgb(240, 240, 240);
+	}
+}
 
+
+
+
+/*
 .menu-open .nav {
 	display: block;
-}
+}*/
