@@ -17,12 +17,17 @@ h1 {
 }
 h2 {
 	font-family: Barlow Condensed;
-	font-style: normal;
 	font-weight: bold;
 	font-size: 80px;
 	line-height: 96px;
 	color: $h2-text-color;
 }
+h3 {
+	font-family: Barlow Condensed;
+	font-weight: bold;
+	line-height: 38px;
+}
+
 header {
 	height: $gap;
 	position: fixed;
@@ -37,11 +42,12 @@ header {
 	z-index: 30;
 }
 .menu {
-	position: fixed;
+	position: absolute;
 	left: 54px;
 	top: 50%;
-	transform: translateY(50%);
 	z-index: 20;
+	display: flex;
+	flex-direction: row-reverse;
 }
 .btn-burger {
 	width: 56px;
@@ -57,6 +63,7 @@ header {
 		height: 5px;
 		background: $brand-color;
 		display: block;
+		transition: .25s ease-in-out;
 	}
 	&-line:before, 
 	&-line:after  {
@@ -68,6 +75,7 @@ header {
 		position: absolute;
 		left: 0;
 		top: 0;
+		transition: .25s ease-in-out;
 	}
 	&-line:after {
 		top: 26px;
@@ -76,6 +84,7 @@ header {
 .hero {
 	background: $primary-color;
 	height: calc(100vh - 160px);
+	padding: $gap;
 	margin: 0 0 $gap;
 	position: relative;
 	display: flex;
@@ -97,13 +106,40 @@ header {
 		z-index: 10;
 	}
 	.info {
+		width: 600px;
+		height: 215px;
 		display: none;
 		opacity: 0;
+		&-span {
+			display: block;
+			color: $brand-color;
+			font-family: Roboto;
+			font-style: italic;
+			font-size: 18px;
+			line-height: 21px;
+		}
 	}
 	.welcome {
 		font-size: 80px;
 		line-height: 96px;
 		font-family: Barlow Condensed;
+	}
+	&:hover {
+		background: $box-color;
+		transition: 2s;
+		&:before {
+			opacity: 0;
+			transform: rotate(180deg) translateX(100%);
+			transition: opacity 2s, transform 2s;
+		}
+		.info {
+			display: block;
+			opacity: 1;
+		}
+		.welcome {
+			display: none;
+			opacity: 0;
+		}
 	}
 }
 .links {
@@ -140,15 +176,35 @@ header {
 	padding: $gap;
 	display: flex;
 	flex-direction: column;
-	&-level {
+	&-level-HTML, &-level-responsive, &-level-bootstrap, &-level-jQuery, &-level-CSS, &-level-Gulp, &-level-Git {
 		width: 20px;
 		height: 20px;
 		border-radius: 10px;
 		background: $primary-color;
-		transition: width 3s 0.5s;
+		transition: width 3s 0.2s;
 	}
-	&-level:hover {
-		width: 50%;
+	&:hover {
+		.skills-level-HTML {
+			width: 90%;
+		}
+		.skills-level-responsive {
+			width: 70%;
+		}
+		.skills-level-bootstrap {
+			width: 60%;
+		}
+		.skills-level-jQuery {
+			width: 60%;
+		}
+		.skills-level-CSS {
+			width: 50%;
+		}
+		.skills-level-Gulp {
+			width: 80%;
+		}
+		.skills-level-Git {
+			width: 85%;
+		}
 	}
 	&-text {
 		font-family: Raleway;
@@ -163,11 +219,144 @@ header {
 		background: rgb(240, 240, 240);
 	}
 }
-
-
-
-
-/*
+/* experience */
+.experience {
+	width: 100%;
+	min-height: 740px;
+	background: $box-color;
+	padding: $gap;
+	display: flex;
+	flex-direction: column;
+	&-box {
+		margin: $gap 0 0;
+		font-family: Raleway;
+		font-style: italic;
+		font-weight: normal;
+		line-height: 38px;
+	}
+	&-span {
+		font-family: Raleway;
+		font-style: italic;
+		line-height: 21px;
+		font-size: 18px;
+		color: $brand-color;
+	}
+}
+.experience a {
+	color: $brand-color;
+	font-size: 18px;
+	line-height: 21px;
+}
+/* projects */
+.projects {
+	width: 100%;
+	min-height: 740px;
+	background: $bg-color;
+	padding: $gap;
+	display: flex;
+	flex-direction: column;
+	color: $box-color; 
+	&-title {
+		color: $primary-color;
+	}
+	&-box {
+		margin: $gap 0 0;
+		font-family: Raleway;
+		font-style: italic;
+		font-weight: normal;
+		line-height: 38px;
+		color: $box-color;
+	}
+}
+.projects-box h3 {
+	color: #fff;
+	margin: 0 0 21px;
+}
+.projects-box a {
+	color: $brand-color;
+	font-size: 18px;
+	line-height: 21px;
+}
+/* footer */
+.footer {
+	width: 100%;
+	background: $bg-color;
+	padding: $gap $gap 0;
+	display: flex;
+	justify-content: space-between;
+	&-email {
+		color: $brand-color;
+		font-family: Roboto;
+		font-style: italic;
+		font-size: 18px;
+		line-height: 21px;
+	}
+	&-email a {
+		font-family: Barlow Condensed;
+		font-weight: bold;
+		font-size: 32px;
+		line-height: 38px;
+		color: #fff;
+		text-decoration: none;
+	}
+	&-tel {
+		font-family: Raleway;
+		font-size: 18px;
+		line-height: 21px;
+		color: #fff;
+	}
+}
+/* menu */
 .menu-open .nav {
-	display: block;
-}*/
+	background: $primary-color;
+	display: flex;
+	flex-direction: column;
+	&-email {
+		font-family: Raleway;
+		font-style: italic;
+		font-size: 18px;
+		line-height: 21px;
+		color: #fff;
+		margin: $gap 0 0;
+	}
+	&-email a {
+		font-family: Barlow Condensed;
+		font-weight: bold;
+		font-size: 32px;
+		line-height: 38px;
+		text-decoration: none;
+		color: $h2-text-color;
+	}
+	&-tel {
+		font-family: Raleway;
+		font-style: italic;
+		font-size: 18px;
+		line-height: 21px;
+		color: #fff;
+		margin: $gap 0 0;
+	}
+}
+.menu-open .btn-burger .btn-burger-line {
+	transform: rotate(45deg);
+	position: absolute;
+	left: -54px;
+	top: 50%;
+}
+.menu-open .btn-burger .btn-burger-line:before {
+	transform: rotate(90deg);
+}
+.menu-open .btn-burger .btn-burger-line:after {
+	display: none;
+}
+.nav-item {
+	margin: 0 0 32px;
+	&-link {
+		font-family: Barlow Condensed;
+		font-weight: bold;
+		font-size: 32px;
+		line-height: 38px;
+		color: $h2-text-color;
+		text-decoration: none;
+	}
+}
+
