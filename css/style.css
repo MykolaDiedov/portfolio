@@ -90,22 +90,23 @@ header {
   z-index: 30; }
 
 .menu {
-  position: absolute;
-  left: 54px;
-  top: 50%;
   z-index: 20;
-  display: flex;
-  flex-direction: row-reverse; }
+  display: none;
+  flex-direction: row-reverse;
+  flex-grow: 1; }
 
 .btn-burger {
   width: 56px;
   height: 31px;
-  position: relative;
+  position: absolute;
   background: none;
   border: 0;
   padding: 0;
   cursor: pointer;
-  outline: none; }
+  outline: none;
+  z-index: 20;
+  left: 54px;
+  top: 50%; }
   .btn-burger-line {
     width: 56px;
     height: 5px;
@@ -132,6 +133,7 @@ header {
   margin: 0 0 80px;
   position: relative;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   z-index: 10; }
@@ -165,7 +167,8 @@ header {
     font-family: Barlow Condensed; }
   .hero:hover {
     background: #f5f5f5;
-    transition: 2s; }
+    transition: 2s;
+    overflow: hidden; }
     .hero:hover:before {
       opacity: 0;
       transform: rotate(180deg) translateX(100%);
@@ -186,6 +189,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+  .links-icon {
+    margin: 0 0 20px; }
 
 .nav {
   display: none; }
@@ -215,7 +220,7 @@ header {
     height: 20px;
     border-radius: 10px;
     background: #618930;
-    transition: width 3s 0.2s; }
+    transition: width 1s 0.1s; }
   .skills:hover .skills-level-HTML {
     width: 90%; }
   .skills:hover .skills-level-responsive {
@@ -347,11 +352,36 @@ header {
     line-height: 21px;
     color: #fff;
     margin: 80px 0 0; }
+  .menu-open .nav-item-link:hover span {
+    font-size: 32px;
+    transition: all 0.5s;
+    border-bottom: 2px solid; }
+  .menu-open .nav-item-link:hover span:nth-child(2) {
+    transition-delay: .1s; }
+  .menu-open .nav-item-link:hover span:nth-child(3) {
+    transition-delay: .2s; }
+  .menu-open .nav-item-link:hover span:nth-child(4) {
+    transition-delay: .3s; }
+  .menu-open .nav-item-link:hover:hover span {
+    font-size: 44px; }
+  .menu-open .nav-item-link:hover:hover span:nth-child(4) {
+    transition-delay: .3s; }
+  .menu-open .nav-item-link:hover:hover span:nth-child(3) {
+    transition-delay: .2s; }
+  .menu-open .nav-item-link:hover:hover span:nth-child(2) {
+    transition-delay: .1s; }
+  .menu-open .nav-item-link:hover:hover span:nth-child(1) {
+    transition-delay: 0s; }
+  .menu-open .nav-item-link:hover.hover-shadow:hover {
+    text-shadow: 1px 1px 0px #87C232, 2px 2px 0px #87C232; }
 
 .menu-open .btn-burger .btn-burger-line {
   transform: rotate(45deg);
+  position: absolute; }
+
+.menu-open .btn-burger {
   position: absolute;
-  left: -54px;
+  left: 0;
   top: 50%; }
 
 .menu-open .btn-burger .btn-burger-line:before {
@@ -369,3 +399,19 @@ header {
     line-height: 38px;
     color: #272822;
     text-decoration: none; }
+
+.menu-open .menu {
+  z-index: 20;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  height: calc(100vh - 160px);
+  background: #618930;
+  width: 100%;
+  margin: 0 80px 0 0;
+  padding: 80px; }
+
+.menu-open .hero {
+  padding: 80px 80px 80px 0; }

@@ -42,22 +42,24 @@ header {
 	z-index: 30;
 }
 .menu {
-	position: absolute;
-	left: 54px;
-	top: 50%;
 	z-index: 20;
-	display: flex;
+	display: none;
 	flex-direction: row-reverse;
+	flex-grow: 1;
 }
+
 .btn-burger {
 	width: 56px;
-	height: 31px;
-	position: relative;
-	background: none;
-	border: 0;
-	padding: 0;
-	cursor: pointer;
-	outline: none;
+    height: 31px;
+    position: absolute;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    z-index: 20;
+    left: 54px;
+    top: 50%;
 	&-line {
 		width: 56px;
 		height: 5px;
@@ -88,6 +90,7 @@ header {
 	margin: 0 0 $gap;
 	position: relative;
 	display: flex;
+	flex-direction: row-reverse;
 	justify-content: center;
 	align-items: center;
 	z-index: 10;
@@ -127,6 +130,7 @@ header {
 	&:hover {
 		background: $box-color;
 		transition: 2s;
+		overflow: hidden;
 		&:before {
 			opacity: 0;
 			transform: rotate(180deg) translateX(100%);
@@ -151,6 +155,10 @@ header {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	&-icon {
+		margin: 0 0 20px;
+	}
+	
 }
 .nav {
 	display: none;
@@ -181,7 +189,7 @@ header {
 		height: 20px;
 		border-radius: 10px;
 		background: $primary-color;
-		transition: width 3s 0.2s;
+		transition: width 1s 0.1s;
 	}
 	&:hover {
 		.skills-level-HTML {
@@ -335,11 +343,54 @@ header {
 		color: #fff;
 		margin: $gap 0 0;
 	}
+	&-item-link:hover {
+		span {
+		font-size: 32px;
+		transition: all 0.5s;
+		border-bottom: 2px solid;
+		 }
+		span:nth-child(2){
+			transition-delay: .1s;
+		}
+		span:nth-child(3){
+			transition-delay: .2s;
+		 }
+		span:nth-child(4){
+			transition-delay: .3s;
+		}
+		&:hover {
+			span {
+			font-size: 44px;
+			}
+			span:nth-child(4){
+			transition-delay: .3s;
+			}
+			span:nth-child(3){
+			transition-delay: .2s;
+			}
+			span:nth-child(2){
+			transition-delay: .1s;
+			}
+			span:nth-child(1){
+			transition-delay: 0s;
+			}
+			}			  
+		&.hover-shadow{
+			&:hover{
+			$color: $brand-color;
+			text-shadow: 1px 1px 0px $color, 2px 2px 0px $color;
+				}
+		}
+		
+	}
 }
 .menu-open .btn-burger .btn-burger-line {
 	transform: rotate(45deg);
 	position: absolute;
-	left: -54px;
+}
+.menu-open .btn-burger {
+	position: absolute;
+	left: 0;
 	top: 50%;
 }
 .menu-open .btn-burger .btn-burger-line:before {
@@ -359,4 +410,18 @@ header {
 		text-decoration: none;
 	}
 }
-
+.menu-open .menu {
+	z-index: 20;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+	align-items: center;
+	flex-grow: 1;
+	height: calc(100vh - 160px);
+	background: $primary-color;
+	width: 100%;
+	margin: 0 $gap 0 0;
+	padding: $gap;
+}.menu-open .hero {
+	padding: $gap $gap $gap 0;
+}
