@@ -1,13 +1,11 @@
 @import 'var';
 @import 'reset';
 
-body {
-	font-size: $text-size;
-	background: $bg-color;
-}
 .wrapper {
 	padding: $gap;
 	min-height: 100vh;
+	font-size: $text-size;
+	background: $bg-color;
 }
 h1 {
 	font-size: 18px;
@@ -27,7 +25,6 @@ h3 {
 	font-weight: bold;
 	line-height: 38px;
 }
-
 header {
 	height: $gap;
 	position: fixed;
@@ -47,7 +44,6 @@ header {
 	flex-direction: row-reverse;
 	flex-grow: 1;
 }
-
 .btn-burger {
 	width: 56px;
     height: 31px;
@@ -85,7 +81,7 @@ header {
 }
 .hero {
 	background: $primary-color;
-	height: calc(100vh - 160px);
+	min-height: calc(100vh - 160px);
 	padding: $gap;
 	margin: 0 0 $gap;
 	position: relative;
@@ -97,7 +93,7 @@ header {
 	&:before {
 		content: "";
 		width: 50%;
-		height: calc(100vh - 160px);
+		min-height: calc(100vh - 160px);
 		background: $box-color;
 		position: absolute;
 		right: 0;
@@ -163,7 +159,6 @@ header {
 .nav {
 	display: none;
 }
-
 /* parallax  */
 .parallax {
 	background-image: url(https://techrocks.ru/wp-content/uploads/2020/08/joshua-aragon-BMnhuwFYr7w-unsplash-1280x1000-1.jpg);
@@ -381,7 +376,6 @@ header {
 			text-shadow: 1px 1px 0px $color, 2px 2px 0px $color;
 				}
 		}
-		
 	}
 }
 .menu-open .btn-burger .btn-burger-line {
@@ -399,8 +393,13 @@ header {
 .menu-open .btn-burger .btn-burger-line:after {
 	display: none;
 }
+.nav-list-box {
+	min-height: 64px;
+	display: flex;
+	align-items: center;
+}
 .nav-item {
-	margin: 0 0 32px;
+	margin: 0 0 0px;
 	&-link {
 		font-family: Barlow Condensed;
 		font-weight: bold;
@@ -417,17 +416,15 @@ header {
 	justify-content: flex-end;
 	align-items: center;
 	flex-grow: 1;
-	height: calc(100vh - 160px);
 	background: $primary-color;
-	width: 100%;
 	margin: 0 $gap 0 0;
 	padding: $gap;
+	min-height: calc(100vh - 160px);
+	width: 50%;
 }.menu-open .hero {
-	padding: $gap $gap $gap 0;
+	padding: 0 $gap 0 0;
 }
-
 /* color switch */
-
 .box_3{
 	background: $bg-color;
 }
@@ -522,5 +519,157 @@ svg.checkbox .is_unchecked{
   to{
     stroke-dashoffset: 0;
     stroke: $brand-color;
+  }
+}
+
+/* light theme */
+
+.light.wrapper {
+	background: $bg-color-lt;
+}
+.light h1 {
+	color: $brand-color-lt;
+}
+.light h2 {
+	color: $h2-text-color;
+}
+.light h3 {
+	font-family: Barlow Condensed;
+	font-weight: bold;
+	line-height: 38px;
+}
+.light header {
+	background: $bg-color-lt;
+}
+.light .btn-burger {
+	
+	&-line {
+		background: $brand-color-lt;
+	}
+	&-line:before, 
+	&-line:after  {
+		background: $brand-color-lt;
+	}
+}
+.light .hero {
+	background: $primary-color-lt;
+	&:before {
+		background: $box-color-lt;
+	}
+	.info {
+		&-span {
+			color: $brand-color-lt;
+		}
+	}
+	&:hover {
+		background: $box-color-lt;
+	}
+}
+/* skills */
+
+.light .skills {
+	background: $box-color-lt;
+	&-level-HTML, &-level-responsive, &-level-bootstrap, &-level-jQuery, &-level-CSS, &-level-Gulp, &-level-Git {
+		background: $primary-color-lt;
+	}
+	&-text {
+		color: $h2-text-color-lt;
+	}
+	&-box {
+		background: rgb(245, 240, 198);
+	}
+	.title {
+		color: $main-text-color-lt;
+	}
+}
+
+/* experience */
+
+.light .experience {
+	background: $box-color-lt;
+	&-span {
+		color: $brand-color-lt;
+	}
+	.title {
+		color: $brand-color-lt;
+	}
+}
+.experience a {
+	color: $brand-color-lt;
+}
+/* projects */
+.light .projects {
+	background: $projects-color-lt;
+	color: $h2-text-color-lt; 
+	&-title {
+		color: $brand-color-lt;
+	}
+	&-box {
+		color: $h2-text-color-lt;
+	}
+}
+.light .projects-box h3 {
+	color: $h2-text-color-lt;
+}
+.projects-box a {
+	color: $brand-color-lt;
+}
+/* footer */
+.light .footer {
+	background: $bg-color-lt;
+	&-email {
+		color: $brand-color-lt;
+	}
+	&-email a {
+		color: $h2-text-color-lt;
+	}
+	&-tel {
+		color: $h2-text-color-lt;
+	}
+}
+.light.menu-open .menu {
+	background: $primary-color-lt;
+}
+.light.menu-open .nav {
+	background: $primary-color-lt;
+}
+.light .box_3{
+	background: $bg-color-lt;
+}
+&-item-link:hover {
+	span {
+	font-size: 32px;
+	transition: all 0.5s;
+	border-bottom: 2px solid;
+	 }
+	span:nth-child(2){
+		transition-delay: .1s;
+	}
+	span:nth-child(3){
+		transition-delay: .2s;
+	 }
+	span:nth-child(4){
+		transition-delay: .3s;
+	}
+	&:hover {
+		
+	&.hover-shadow{
+		&:hover{
+		$color: $box-color-lt;
+		text-shadow: 1px 1px 0px $color, 2px 2px 0px $color;
+			}
+	}
+	
+}
+@-webkit-keyframes resetRing{
+  to{
+    stroke-dashoffset: 0;
+    stroke: $brand-color-lt;
+  }
+}
+@keyframes resetRing{
+  to{
+    stroke-dashoffset: 0;
+    stroke: $brand-color-lt;
   }
 }
