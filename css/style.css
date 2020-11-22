@@ -371,7 +371,7 @@ header {
   .menu-open .nav-item-link:hover:hover span:nth-child(1) {
     transition-delay: 0s; }
   .menu-open .nav-item-link:hover.hover-shadow:hover {
-    text-shadow: 1px 1px 0px #ded2a8, 2px 2px 0px #ded2a8; }
+    text-shadow: 1px 1px 0px #87C232, 2px 2px 0px #87C232; }
 
 .menu-open .btn-burger .btn-burger-line {
   transform: rotate(45deg);

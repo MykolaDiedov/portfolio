@@ -636,31 +636,6 @@ svg.checkbox .is_unchecked{
 .light .box_3{
 	background: $bg-color-lt;
 }
-&-item-link:hover {
-	span {
-	font-size: 32px;
-	transition: all 0.5s;
-	border-bottom: 2px solid;
-	 }
-	span:nth-child(2){
-		transition-delay: .1s;
-	}
-	span:nth-child(3){
-		transition-delay: .2s;
-	 }
-	span:nth-child(4){
-		transition-delay: .3s;
-	}
-	&:hover {
-		
-	&.hover-shadow{
-		&:hover{
-		$color: $box-color-lt;
-		text-shadow: 1px 1px 0px $color, 2px 2px 0px $color;
-			}
-	}
-	
-}
 @-webkit-keyframes resetRing{
   to{
     stroke-dashoffset: 0;
